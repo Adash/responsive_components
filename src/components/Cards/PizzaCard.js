@@ -13,18 +13,21 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* align-items: center; */
 `;
 
 const ImageContainer = styled.div`
   height: 200px;
   background-color: teal;
+  border-radius: 5px 5px 0px 0px;
   padding: 0px;
   margin: 0px;
 `;
 
 const TextContainer = styled.div`
-  padding: 5px;
+  padding: 10px;
   color: #005e66;
+  text-align: center;
 `;
 
 const ButtonsContainer = styled.div`
@@ -34,15 +37,25 @@ const ButtonsContainer = styled.div`
 `;
 
 const Button = styled.button`
+  padding: 10px 15px 10px 15px;
   border: none;
   background-color: transparent;
   color: #006d77;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.5s, color 0.5s;
+
+  :hover {
+    color: #0096a3;
+    background-color: #edf6f9;
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: inherit;
 `;
 
 const Card = () => {
