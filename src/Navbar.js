@@ -5,7 +5,7 @@ import { Link as UnstyledLink } from '@reach/router';
 const StyledNavbar = styled.div`
   position: absolute;
   top: 0;
-  height: 3rem;
+  height: var(--nav-height);
   width: 100vw;
   background-color: var(--color-navbar-core);
   display: flex;
@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
 const Link = styled(UnstyledLink)`
   color: #edf6f9;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-right: 10px;
   transition: color 0.3s ease-in-out;
   :hover {

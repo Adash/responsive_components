@@ -27,9 +27,10 @@ const StyledShowNavButton = styled.button`
   top: 0;
   left: 0;
   z-index: 10;
-  width: 35px;
-  height: 3rem;
-  background-color: ${(props) => (props.showNav ? '#282828' : '#8b8f91')};
+  width: 55px;
+  height: var(--nav-height);
+  background-color: ${(props) =>
+    props.showNav ? 'var(--color-navbar-accent)' : 'var(--color-navbar-core)'};
   border: none;
   border-radius: 0% 0% 5% 0%;
   transition: width 0.5s ease-out, background-color 0.5s ease-out;
@@ -37,7 +38,7 @@ const StyledShowNavButton = styled.button`
   :hover {
     background-color: #282828;
     width: 100px;
-    height: 3rem;
+    /* height: 3rem; */
   }
 `;
 
