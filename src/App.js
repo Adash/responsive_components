@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
+import ThemeSelector from './Themes/ThemeSelector';
+import ThemePage from './Themes/ThemePage';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import { Router } from '@reach/router';
@@ -17,7 +19,7 @@ const WrapperRouter = styled(Router)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #edf6f9;
+  background-color: var(--color-background);
 `;
 
 const StyledShowNavButton = styled.button`
@@ -31,6 +33,7 @@ const StyledShowNavButton = styled.button`
   border: none;
   border-radius: 0% 0% 5% 0%;
   transition: width 0.5s ease-out, background-color 0.5s ease-out;
+  cursor: pointer;
   :hover {
     background-color: #282828;
     width: 100px;
@@ -44,20 +47,26 @@ const StyledShowNavButton = styled.button`
 
 function App() {
   const [showNav, setShowNav] = useState(false);
+  const [theme, setTheme] = useState('default');
+
   return (
-    <StyledApp>
-      <StyledShowNavButton
-        showNav={showNav}
-        onClick={() => {
-          setShowNav((prevState) => !prevState);
-        }}
-      />
-      {showNav ? <Navbar /> : null}
-      <WrapperRouter>
-        <Card path="/card" />
-        <MultiSelectList path="/multiselectlist" />
-      </WrapperRouter>
-    </StyledApp>
+    <>
+      <ThemeSelector theme={theme} />
+      <StyledApp>
+        <StyledShowNavButton
+          showNav={showNav}
+          onClick={() => {
+            setShowNav((prevState) => !prevState);
+          }}
+        />
+        {showNav ? <Navbar /> : null}
+        <WrapperRouter>
+          <Card path="/card" />
+          <MultiSelectList path="/multiselectlist" />
+          <ThemePage path="/theme" theme={theme} setTheme={setTheme} />
+        </WrapperRouter>
+      </StyledApp>
+    </>
   );
 }
 

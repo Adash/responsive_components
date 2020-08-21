@@ -7,7 +7,7 @@ const StyledNavbar = styled.div`
   top: 0;
   height: 3rem;
   width: 100vw;
-  background-color: #282828;
+  background-color: var(--color-navbar-core);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -35,6 +35,7 @@ const Navbar = () => (
       <Link to="/home">Home</Link>
       <Link to="/card">Card</Link>
       <Link to="/multiselectlist">List</Link>
+      <Link to="/theme">Theme</Link>
       <Link to="/about">About</Link>
     </StyledNav>
   </StyledNavbar>
