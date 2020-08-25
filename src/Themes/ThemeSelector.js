@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultTheme from './DefaultTheme';
+import OceanTheme from './OceanTheme';
 import AltTheme from './AltTheme';
 
 // provides the switching mechanism for selecting the global style for the whole app
@@ -7,12 +7,12 @@ import AltTheme from './AltTheme';
 
 const ThemeSelector = ({ theme }) => {
   switch (theme) {
-    case 'default':
-      return <DefaultTheme />;
+    case 'Ocean':
+      return <OceanTheme />;
     case 'alt':
       return <AltTheme />;
     default:
-      return <DefaultTheme />;
+      return <OceanTheme />;
   }
 };
 

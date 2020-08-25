@@ -1,1 +1,3 @@
-add background color selector which will accept hex color values
+
+add new element : https://youtu.be/YmyqlM13JUU
+

@@ -5,8 +5,10 @@ import ThemePage from './Themes/ThemePage';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import { Router } from '@reach/router';
+import Home from './Home';
 import Card from './components/Cards/PizzaCard';
 import MultiSelectList from './components/MultiSelectList/MultiSelectList';
+import AnimatedCard from './components/Cards/AnimatedCard';
 
 const StyledApp = styled.div`
   height: 100vh;
@@ -61,9 +63,20 @@ function App() {
           }}
         />
         {showNav ? <Navbar /> : null}
+        <div
+          style={{
+            position: 'absolute',
+            top: '5rem',
+            color: 'var(--color-core)',
+          }}
+        >
+          <p>Selected theme: {theme}</p>
+        </div>
         <WrapperRouter>
+          <Home path="/" />
           <Card path="/card" />
           <MultiSelectList path="/multiselectlist" />
+          <AnimatedCard path="/animatedcard" />
           <ThemePage path="/theme" theme={theme} setTheme={setTheme} />
         </WrapperRouter>
       </StyledApp>
